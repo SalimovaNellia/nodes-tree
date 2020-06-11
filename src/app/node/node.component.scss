@@ -1,5 +1,8 @@
-.node-item-wrap {
+.node-info {
   position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 25px;
 
   &:before {
     content: '';
@@ -31,7 +34,9 @@
   }
 }
 
-
+.node-item {
+  margin-bottom: 8px;
+}
 
 .node-title {
 
@@ -39,3 +44,10 @@
     cursor: pointer;
   }
 }
+
+.new-item-input {
+  margin-right: 20px;
+}
+
+
+

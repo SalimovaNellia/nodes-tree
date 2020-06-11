@@ -1,13 +1,26 @@
-<p class="node-item-wrap" (click)="toggleList($event)">
+<p class="node-info" (click)="toggleList($event)">
   <span class="toggle-icon" *ngIf="node.children.length > 0" ></span>
   <span class="node-title" [ngClass]="node.children.length > 0 ? 'parent' : '' ">{{node.title}} </span>
   <span *ngIf="node.children.length > 0">({{node.children.length}})</span>
 </p>
 
+<button class="btn delete-btn"
+        (click)="openModal()">Удалить</button>
+
 <ul *ngIf="listOpened" class="nodes-list">
-  <li *ngFor="let child of node.children">
+  <li class="node-item" *ngFor="let child of node.children">
     <app-node [node]="child"></app-node>
   </li>
 </ul>
+
+<div *ngIf="node.children.length > 0 && listOpened">
+  <input #newItem
+         type="text"
+         placeholder="Введите название..."
+         class="new-item-input"
+         (keyup.enter)="addNewItem()">
+  <button class="btn add-btn" (click)="addNewItem()">Добавить</button>
+</div>
+
 
 

@@ -1,8 +1,36 @@
-ul, li {
-  list-style: none;
-}
+@import "null.scss";
 
 .nodes-list {
   padding-left: 20px;
   border-left: 1px solid #000000;
+}
+
+input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #3185D6;
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: #236bb1;
+  }
+}
+
+.delete-btn {
+  background-color: #d9534f;
+
+  &:hover {
+    background-color: #c9302c;
+  }
 }
