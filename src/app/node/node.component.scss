@@ -1,0 +1,41 @@
+.node-item-wrap {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 1px;
+    background-color: #000000;
+    top: 50%;
+    left: -20px;
+  }
+
+  .toggle-icon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-right: 15px;
+    border-style: solid;
+    border-width: 4px 0 4px 8px;
+    border-color: transparent transparent transparent #000000;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  &.open {
+    .toggle-icon {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+
+
+.node-title {
+
+  &.parent {
+    cursor: pointer;
+  }
+}
