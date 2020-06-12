@@ -1,6 +1,6 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {Node} from "../../../model/node";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {ModalService} from "../modal.service";
 
 @Component({
   selector: 'app-node',
@@ -15,7 +15,8 @@ export class NodeComponent implements OnInit {
 
   listOpened: boolean = false;
 
-  constructor() { }
+  constructor(private modalService: ModalService) { }
+
   ngOnInit() {
   }
 
@@ -32,5 +33,14 @@ export class NodeComponent implements OnInit {
     }
   }
 
+  openModal(id: string) {
+    console.log('id', id);
+    console.log(this.modalService);
 
+    this.modalService.open(id);
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
+  }
 }

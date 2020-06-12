@@ -4,8 +4,9 @@
   <span *ngIf="node.children.length > 0">({{node.children.length}})</span>
 </p>
 
-<button class="btn delete-btn"
-        (click)="openModal()">Удалить</button>
+<button id="delete-modal-button"
+        class="btn delete-btn"
+        (click)="openModal('delete-modal' )">Удалить</button>
 
 <ul *ngIf="listOpened" class="nodes-list">
   <li class="node-item" *ngFor="let child of node.children">
@@ -21,6 +22,11 @@
          (keyup.enter)="addNewItem()">
   <button class="btn add-btn" (click)="addNewItem()">Добавить</button>
 </div>
+
+<app-modal id="delete-modal">
+  <h1>Удалить?</h1>
+  <button (click)="closeModal('delete-modal');">Close</button>
+</app-modal>
 
 
 
